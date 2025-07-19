@@ -9,7 +9,7 @@ Solutions for the recruitment tasks described in [`recruitment_task.pdf`](recrui
 ```bash
 # 1. Setup environment
 python -m venv venv
-source venv/bin/activat
+source venv/bin/activate
 pip install -r requirements.txt
 
 # 2. Run Task 1: Reach Curve Modeling
