@@ -25,25 +25,27 @@ python -m task2_tensorflow_optimization.src.optimization
 ```
 ├── task1_reach_curve_modelling/
 │   ├── notebooks/
-│   └── data/                   
+|   |   └── 01_reach_curve_exploration.ipynb
+│   └── data/
+|       └── timespends.csv            
 ├── task2_tensorflow_optimization/
-│   └── src/optimization/  
+│   └── src/
+|       └── main.py
+|       └── funcs.py
 └── requirements.txt
 ```
 
 ## 📊 Task 1: Reach Curve Modeling
 
-**What it does:** Models how marketing reach grows with impressions using different curve types (logarithmic, saturation, exponential).
+**What it does:** Models reach curve based on timespends data.
 
 **Key features:**
 - Interactive Jupyter notebook with visualizations
-- TODO: update with some ideas
+- TODO: Propose any simple mathematical model
 
 ## 🔧 Task 2: TensorFlow CPU Optimization
 
 **What it does:** Optimizes mathematical functions using TensorFlow on CPU with various algorithms.
 
 **Key features:** 
-TODO: add simple case 
-do some optimizations
-
+TODO: try to find yet another methods to speed up computations beyond ```@tf.function``` and ```jitting```. 
