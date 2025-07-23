@@ -42,10 +42,11 @@ python -m task2_tensorflow_optimization.src.optimization
 **Key features:**
 - Interactive Jupyter notebook with visualizations
 - TODO: Propose any simple mathematical model
+- TODO: Plan - read a paper [Reach Measurement, Optimization and Frequency Capping In Targeted Online Advertising Under k-Anonymity](https://arxiv.org/abs/2501.04882) - and think about formalization of problem and coding.
 
 ## 🔧 Task 2: TensorFlow CPU Optimization
 
-**What it does:** Optimizes mathematical functions using TensorFlow on CPU with various algorithms.
+**What it does:** Optimizes execution time of a function using TensorFlow on CPU.
 
 **Key features:** 
 TODO: try to find yet another methods to speed up computations beyond ```@tf.function``` and ```jitting```. 
