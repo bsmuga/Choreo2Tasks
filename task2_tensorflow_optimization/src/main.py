@@ -37,15 +37,25 @@ def benchmark_fn_perf_time(
 
 
 def calculate_gradients(
-    func: Callable, T: tf.Variable, p: tf.Variable
+    func: Callable, T: tf.Variable, p: tf.Variable, compute_full_jacobian: bool = False
 ) -> tuple[tf.Tensor | None, tf.Tensor | None]:
+    """
+    Compute tf.gradients for the the given function.
+
+    NOTE: tensorflow - in fact computes not exactly Jacobian matrix
+    (for example df/df should be vector with 4 entries, but is 1 d)
+    but sum of the rows of Jacobian matrix. 
+
+    More in the documentation:
+    https://www.tensorflow.org/guide/advanced_autodiff#jacobians
+    """
     with tf.GradientTape(persistent=True) as tape:
         tape.watch([T, p])
         output = func(T, p)
 
-    grad_T = tape.gradient(output, T)
-    grad_p = tape.gradient(output, p)
-    return grad_T, grad_p
+    if compute_full_jacobian:
+        return tape.jacobian(output, T), tape.jacobian(output, p)
+    return tape.gradient(output, T), tape.gradient(output, p)
 
 
 if __name__ == "__main__":
